@@ -5,13 +5,13 @@
     visibility: hidden;
     transition: opacity .8s ease-out, visibility 0s linear .5s;
     z-index: 99999;
- }
+}
 
- #spinner.show {
-     transition: opacity .8s ease-out, visibility 0s linear .0s;
-     visibility: visible;
-     opacity: 1;
- }
+#spinner.show {
+    transition: opacity .8s ease-out, visibility 0s linear .0s;
+    visibility: visible;
+    opacity: 1;
+}
 
 /*** Spinner End ***/
 
@@ -96,8 +96,13 @@
 }
 
 @keyframes mymove {
-    from {left: -100%;}
-    to {left: 100%;}
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 100%;
+    }
 }
 
 /*** Topbar End ***/
@@ -113,13 +118,13 @@
     color: var(--bs-white);
     font-size: 18px;
     outline: none;
-    
+
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
     /* color: var(--bs-secondary) !important; */
-        color: #54a7c6; 
+    color: #54a7c6;
 }
 
 .navbar .dropdown-toggle::after {
@@ -211,7 +216,7 @@
 }
 
 .carousel-control-next:hover {
-    background:#54a7c6;
+    background: #54a7c6;
     transition: .8s;
 }
 
@@ -265,25 +270,32 @@
 
 
 .text-dark {
-    color: #333; /* Dark text color */
-    font-size: 18px; /* Font size */
-    display: inline-flex; /* Use flexbox to align icon and text */
-    align-items: center; /* Align items vertically */
-    gap: 10px; /* Space between icon and text */
-  }
+    color: #333;
+    /* Dark text color */
+    font-size: 18px;
+    /* Font size */
+    display: inline-flex;
+    /* Use flexbox to align icon and text */
+    align-items: center;
+    /* Align items vertically */
+    gap: 10px;
+    /* Space between icon and text */
+}
 
-  .text-dark i {
-    color: #555; /* Icon color */
-    font-size: 20px; /* Slightly larger icon size for emphasis */
-  }
+.text-dark i {
+    color: #555;
+    /* Icon color */
+    font-size: 20px;
+    /* Slightly larger icon size for emphasis */
+}
 
-  
+
 
 @media (max-width: 992px) {
     .carousel-item {
         min-height: 500px;
     }
-    
+
     .carousel-item img {
         min-height: 500px;
         object-fit: cover;
@@ -302,7 +314,7 @@
     .carousel-item {
         min-height: 400px;
     }
-    
+
     .carousel-item img {
         min-height: 400px;
         object-fit: cover;
@@ -355,7 +367,7 @@
     top: 0;
     left: 0;
     border-radius: 10px 10px 0 0;
-    background:rgb(185, 182, 182);
+    background: rgb(185, 182, 182);
     transition: .5s;
 }
 
@@ -382,7 +394,7 @@
 }
 
 .services-item:hover .services-content-icon i {
-    color: #54a7c6 ;
+    color: #54a7c6;
 }
 
 .services-item:hover .services-content-icon p {
@@ -397,15 +409,20 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: 100vh; /* Adjust the height as needed */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    height: 100vh;
+    /* Adjust the height as needed */
 }
 
 /* Hide the scrollbar */
 #services-section::-webkit-scrollbar {
-    width: 0; /* Set width to 0 to hide the scrollbar */
-    background: transparent; /* Optional: Set background color to match background */
+    width: 0;
+    /* Set width to 0 to hide the scrollbar */
+    background: transparent;
+    /* Optional: Set background color to match background */
 }
+
 /*** Services End ***/
 
 
@@ -437,7 +454,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    background:rgb(36, 36, 36);
+    background: rgb(36, 36, 36);
     border-radius: 10px;
     opacity: 1;
     z-index: -1;
@@ -459,7 +476,7 @@
 .project-content a {
     display: inline-block;
     padding: 20px 25px;
-    background:#54a7c6;
+    background: #54a7c6;
     border-radius: 10px;
 }
 
@@ -472,13 +489,14 @@
 .project-item:hover .project-img::before,
 .project-item:hover .project-img::after {
     opacity: 0;
-    
+
 }
 
 
 
 .project-item {
-    display: block; /* Initially display all project items */
+    display: block;
+    /* Initially display all project items */
 }
 
 .btn-filter {
@@ -497,6 +515,7 @@
 .skill-item:hover {
     transform: translateY(-5px);
 }
+
 /*** Project End ***/
 
 
@@ -516,7 +535,7 @@
     position: absolute;
     top: 6px;
     left: -140px;
-    
+
 }
 
 .blog-btn-icon:hover .blog-icon-2 {
@@ -525,10 +544,12 @@
     top: 6px;
     padding-bottom: 5px;
 }
+
 .blog-icon-1 {
     position: relative;
     top: -4px;
 }
+
 .blog-btn-icon:hover .blog-icon-1 {
     top: 0;
     right: -140px;
@@ -695,11 +716,11 @@
 }
 
 .contact-map {
-     background-color:#54a7c6;
+    background-color: #54a7c6;
 }
 
 .contact-form {
-    background-color:#54a7c6;
+    background-color: #54a7c6;
 }
 
 /*** Contact End ***/
@@ -762,6 +783,7 @@ section#careers {
 .btn:hover {
     background-color: #0056b3;
 }
+
 .job-card {
     transition: transform 0.3s ease-in-out;
 }
