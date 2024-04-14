@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road Animation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #222;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    .road-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .road-svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .road-path {
+        stroke: #fff;
+        stroke-width: 10;
+    }
+
+    .steps {
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        max-width: 800px;
+        font-size: 20px;
+    }
+
+    .step {
+        text-align: center;
+        opacity: 0;
+        animation: appear 5s linear forwards;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .step i {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .ball {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: #f00;
+        border-radius: 50%;
+        animation: bounce 5s linear forwards;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translate(0, 0); }
+        25% { transform: translate(calc(25% - 10px), -50%); }
+        50% { transform: translate(calc(50% - 10px), 0); }
+        75% { transform: translate(calc(75% - 10px), 50%); }
+    }
+
+    @keyframes appear {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+<div class="road-container">
+    <svg class="road-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 100">
+        <!-- Define your road path here -->
+        <path class="road-path" d="M0 50 H800" />
+    </svg>
+    <div class="steps">
+        <div class="step">
+            <i class="fas fa-tasks"></i>
+            Planning
+        </div>
+        <div class="step">
+            <i class="fas fa-pencil-alt"></i>
+            Designing
+        </div>
+        <div class="step">
+            <i class="fas fa-code"></i>
+            Implementation
+        </div>
+        <div class="step">
+            <i class="fas fa-vial"></i>
+            Testing
+        </div>
+        <div class="step">
+            <i class="fas fa-rocket"></i>
+            Deployment
+        </div>
+        <div class="ball"></div>
+    </div>
+</div>
+
+</body>
+</html>

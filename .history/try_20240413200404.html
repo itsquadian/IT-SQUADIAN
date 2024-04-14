@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road Animation</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #222;
+        color: #fff;
+        font-family: Arial, sans-serif;
+    }
+
+    .road-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+
+    .road-svg {
+        width: 10px;
+        height: 100%;
+    }
+
+    .road-path {
+        stroke: #888;
+        stroke-width: 8;
+    }
+
+    .car {
+        fill: #f00;
+        transform-origin: center;
+        animation: moveCar 10s linear infinite;
+    }
+
+    .step {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        opacity: 0;
+        animation: appear 5s linear forwards;
+    }
+
+    @keyframes moveCar {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+    }
+
+    @keyframes appear {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+<div class="road-container">
+    <svg class="road-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 200">
+        <!-- Define your road path here -->
+        <path class="road-path" d="M5 0 V200" />
+        <!-- Add a moving car -->
+        <polygon class="car" points="5,5 10,10 10,20 5,25 0,20 0,10" />
+    </svg>
+    <div class="step" style="top: 10%;">Planning</div>
+    <div class="step" style="top: 30%;">Designing</div>
+    <div class="step" style="top: 50%;">Implementation</div>
+    <div class="step" style="top: 70%;">Testing</div>
+    <div class="step" style="top: 90%;">Deployment</div>
+</div>
+
+</body>
+</html>

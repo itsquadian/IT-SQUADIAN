@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road Animation</title>
+<style>
+    .road-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .road-svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .moving-object {
+        transition: transform 5s linear;
+    }
+
+    .text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    @keyframes moveObject {
+        from {
+            transform: translate(0, 0);
+        }
+        to {
+            transform: translate(800px, 0);
+        }
+    }
+</style>
+</head>
+<body>
+<div class="road-container">
+    <svg class="road-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+        <!-- Define your road path here -->
+        <path id="road-path" d="M0 100 C100 50 700 150 800 100" stroke="#888" stroke-width="20" fill="none"/>
+        <!-- Add a moving object -->
+        <circle class="moving-object" cx="0" cy="100" r="10" fill="#f00"/>
+    </svg>
+    <div class="text-container">
+        <p>From thorough research and meticulous design to seamless implementation, rigorous testing, and successful deployment</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var path = document.getElementById("road-path");
+        var length = path.getTotalLength();
+        var object = document.querySelector(".moving-object");
+
+        // Set the length of the path as stroke-dasharray to animate along the path
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+
+        // Animate the object along the path
+        object.style.transition = 'transform 5s linear';
+        object.style.transformOrigin = 'center';
+        object.style.animation = 'moveObject 5s linear forwards';
+    });
+</script>
+</body>
+</html>
